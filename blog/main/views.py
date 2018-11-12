@@ -6,16 +6,10 @@ def main(request):
     '''
     Render the main page
     '''
-    html = '''
-    <!doctype html>
-    <html>
-    <head>
-    <title>部落格</title>
-    <meta charset="utf-8">
-    </head>
-    <body>
-    <p>這是 HTML 版的 Hello world!</p>
-    </body>
-    </html>
+    context = {'like':'Django 很棒'}
+    return render(request, 'main/main.html', context)
+def about(request):
     '''
-    return HttpResponse(html)
+    Render the about page
+    '''
+    return render(request, 'main/about.html')
